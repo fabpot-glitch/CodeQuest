@@ -1,0 +1,254 @@
+.interview-preparation {
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  background: #f8f9fa;
+  min-height: 100vh;
+}
+
+.preparation-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.preparation-header h1 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.preparation-header p {
+  font-size: 1.1rem;
+  color: #7f8c8d;
+}
+
+.preparation-tabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 0;
+}
+
+.tab {
+  padding: 1rem 2rem;
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #7f8c8d;
+  transition: all 0.3s ease;
+  position: relative;
+  bottom: -2px;
+}
+
+.tab:hover {
+  color: #3498db;
+}
+
+.tab.active {
+  color: #3498db;
+  border-bottom-color: #3498db;
+  font-weight: 600;
+}
+
+.preparation-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Overview Content */
+.overview-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.progress-section {
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 12px;
+  color: white;
+}
+
+.progress-section h3 {
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.progress-bar {
+  background: rgba(255, 255, 255, 0.3);
+  height: 30px;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-fill {
+  height: 100%;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 1rem;
+  color: #667eea;
+  font-weight: 700;
+  transition: width 0.5s ease;
+  border-radius: 15px;
+}
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.category-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 2px solid #e0e0e0;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  border-color: #3498db;
+}
+
+.category-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.category-card h4 {
+  font-size: 1.2rem;
+  color: #2c3e50;
+  margin: 0;
+}
+
+.category-card p {
+  color: #7f8c8d;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  flex-grow: 1;
+}
+
+.category-status {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.status-completed {
+  background: #d4edda;
+  color: #155724;
+}
+
+.status-progress {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.status-not-started {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.start-btn {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
+}
+
+.start-btn:hover {
+  background: #2980b9;
+  transform: scale(1.05);
+}
+
+.tips-section {
+  background: #e8f4f8;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border-left: 4px solid #3498db;
+}
+
+.tips-section h3 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.tips-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tips-list li {
+  padding: 0.75rem 0;
+  color: #555;
+  font-size: 1rem;
+  border-bottom: 1px solid #d0e8f0;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.tips-list li:last-child {
+  border-bottom: none;
+}
+
+.tips-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #3498db;
+  font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .interview-preparation {
+    padding: 1rem;
+  }
+
+  .preparation-header h1 {
+    font-size: 2rem;
+  }
+
+  .preparation-tabs {
+    flex-wrap: wrap;
+  }
+
+  .tab {
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .categories-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .preparation-content {
+    padding: 1rem;
+  }
+}

@@ -1,0 +1,159 @@
+/* CoursesPage.css */
+
+.courses-page {
+  min-height: 100vh;
+  background: #f8fafc;
+}
+
+/* Page Transition Animations */
+.courses-page > * {
+  animation: pageFade 0.3s ease;
+}
+
+@keyframes pageFade {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Loading State for Route Transitions */
+.courses-page-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid #e2e8f0;
+  border-top-color: #2563eb;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Error Boundary Styles */
+.courses-page-error {
+  text-align: center;
+  padding: 4rem 2rem;
+  max-width: 600px;
+  margin: 4rem auto;
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  border: 1px solid #e2e8f0;
+}
+
+.error-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.courses-page-error h2 {
+  font-size: 1.5rem;
+  color: #1e293b;
+  margin-bottom: 1rem;
+}
+
+.courses-page-error p {
+  color: #64748b;
+  margin-bottom: 1.5rem;
+}
+
+.error-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.retry-btn,
+.home-btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.retry-btn {
+  background: #2563eb;
+  color: white;
+}
+
+.retry-btn:hover {
+  background: #1d4ed8;
+}
+
+.home-btn {
+  background: #f1f5f9;
+  color: #475569;
+}
+
+.home-btn:hover {
+  background: #e2e8f0;
+}
+
+/* Breadcrumb Navigation */
+.courses-breadcrumb {
+  padding: 1rem 2rem;
+  background: white;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.breadcrumb-list {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.breadcrumb-item {
+  color: #64748b;
+}
+
+.breadcrumb-item a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.breadcrumb-item a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb-separator {
+  color: #cbd5e1;
+}
+
+.breadcrumb-item.active {
+  color: #1e293b;
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .error-actions {
+    flex-direction: column;
+  }
+  
+  .courses-breadcrumb {
+    padding: 1rem;
+  }
+  
+  .breadcrumb-list {
+    flex-wrap: wrap;
+  }
+}

@@ -1,0 +1,293 @@
+.step-navigation {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 2px solid #f0f0f0;
+}
+
+.step-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  gap: 15px;
+}
+
+.nav-btn {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 140px;
+  justify-content: center;
+}
+
+.prev-btn {
+  background: #f8f9fa;
+  color: #495057;
+  border: 2px solid #e9ecef;
+}
+
+.prev-btn:hover:not(:disabled) {
+  background: #e9ecef;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.prev-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.next-btn {
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  color: white;
+}
+
+.next-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #2980b9, #1c6ea4);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+}
+
+.next-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.step-indicators {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-top: 40px;
+  padding: 0 10px;
+}
+
+.step-indicators::before {
+  content: '';
+  position: absolute;
+  top: 24px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: #e0e0e0;
+  z-index: 1;
+}
+
+.step-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+  transition: all 0.3s;
+  min-width: 80px;
+  text-align: center;
+}
+
+.step-indicator:hover:not(.active) {
+  transform: translateY(-5px);
+}
+
+.step-indicator:hover:not(.active) .step-number {
+  transform: scale(1.1);
+  border-color: #3498db;
+  color: #3498db;
+}
+
+.step-number {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: white;
+  border: 3px solid #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: #999;
+  font-size: 18px;
+  margin-bottom: 10px;
+  transition: all 0.3s;
+  z-index: 2;
+}
+
+.step-indicator.active .step-number {
+  background: #3498db;
+  border-color: #3498db;
+  color: white;
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+}
+
+.step-indicator.completed .step-number {
+  background: #2ecc71;
+  border-color: #2ecc71;
+  color: white;
+}
+
+.step-indicator.completed .step-number i {
+  font-size: 20px;
+}
+
+.step-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 5px;
+  max-width: 100px;
+  word-wrap: break-word;
+  text-align: center;
+}
+
+.step-indicator.active .step-label {
+  color: #3498db;
+  font-weight: 700;
+}
+
+.step-indicator.completed .step-label {
+  color: #2ecc71;
+}
+
+.step-tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #2c3e50;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+  margin-bottom: 10px;
+  z-index: 100;
+}
+
+.step-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: #2c3e50 transparent transparent transparent;
+}
+
+.step-indicator:hover .step-tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+.step-progress {
+  position: absolute;
+  top: 24px;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #3498db, #2ecc71);
+  z-index: 1;
+  transition: width 0.3s ease;
+}
+
+.step-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.step-action-btn {
+  padding: 8px 16px;
+  background: #f8f9fa;
+  border: 2px solid #e9ecef;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #495057;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.step-action-btn:hover {
+  background: #e9ecef;
+}
+
+@media (max-width: 1024px) {
+  .step-indicators {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .step-indicators::before {
+    display: none;
+  }
+  
+  .step-progress {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .step-buttons {
+    flex-direction: column;
+  }
+  
+  .nav-btn {
+    width: 100%;
+  }
+  
+  .step-indicators {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .step-indicator {
+    width: 100%;
+    flex-direction: row;
+    gap: 15px;
+    align-items: center;
+    padding: 15px;
+    border: 2px solid #f0f0f0;
+    border-radius: 8px;
+  }
+  
+  .step-indicator.active {
+    border-color: #3498db;
+    background: #f0f8ff;
+  }
+  
+  .step-indicator.completed {
+    border-color: #2ecc71;
+    background: #f0fff4;
+  }
+  
+  .step-number {
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+  
+  .step-label {
+    margin-top: 0;
+    text-align: left;
+    font-size: 14px;
+    flex: 1;
+  }
+  
+  .step-tooltip {
+    display: none;
+  }
+}
